@@ -51,6 +51,9 @@ pipeline {
     }
 
     stage('Deploy to UAT') {
+      when {
+        branch 'master'
+      }
       steps {
         echo 'Deployed to UAT'
       }
