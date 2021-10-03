@@ -42,6 +42,9 @@ pipeline {
     }
 
     stage('QA Certify for UAT') {
+      when {
+        branch 'master'
+      }
       steps {
         input 'Do you want to certify this build?'
       }
