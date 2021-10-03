@@ -54,12 +54,18 @@ pipeline {
     }
 
     stage('QA Certify for Acceptance') {
+      when {
+        branch 'master'
+      }
       steps {
         input 'Do you want to certify this code to prod'
       }
     }
 
     stage('Prod Deploy') {
+      when {
+        branch 'master'
+      }
       steps {
         echo 'Deploy to prod'
       }
